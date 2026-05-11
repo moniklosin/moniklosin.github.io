@@ -42,13 +42,18 @@
     <!-- Force white background -->
     <style>
         body {
-            background-color: rgb(255, 254, 251) !important;
+            background-color: rgb(235, 245, 237) !important;
         }
     </style>
     <!-- Make Copy Email work -->
     <script>
         function copyEmail() {
             navigator.clipboard.writeText("monicaklosin@gmail.com");
+            const span = document.querySelector(".copy-button");
+            span.textContent = "Copied!";
+            setTimeout(() => {
+                span.textContent = "monicaklosin@gmail.com";
+            }, 2000);
         }
     </script>
 
@@ -82,10 +87,16 @@
                         <td><a href="https://startplaying.games" title="StartPlaying" class="link">
                                 StartPlaying (TBD)</a></td>
                     </tr>
-                    <tr>
-                        <td><i class="fab fa-discord fa-1x"></i></td>
-                        <td><a href="https://discord.com/users/381626011206549506" title="Discord" class="link">
-                                Discord</a></td>
+                   <tr>
+    <td><i class="fab fa-discord fa-1x"></i></td>
+    <td>
+        <button class="tooltip" title="Add me on Discord!"
+            onclick="window.open('https://discord.com/users/381626011206549506')">
+            <span class="noupper" style="margin-right: 5%">Discord</span>
+            <i class="fab fa-discord" style="font-size: 14px"></i>
+        </button>
+    </td>
+</tr>
                 </table>
                 <p>
                 <p>
