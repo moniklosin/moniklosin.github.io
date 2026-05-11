@@ -42,17 +42,17 @@
     <!-- Force white background -->
     <style>
         body {
-            background-color: rgb(235, 241, 245) !important;
+            background-color: rgb(235, 239, 245) !important;
         }
     </style>
     <!-- Make Copy Email work -->
     <script>
         function copyEmail() {
             navigator.clipboard.writeText("monicaklosin@gmail.com");
-            const span = document.querySelector(".copy-button");
-            span.textContent = "Copied!";
+            const popup = document.getElementById("copied-popup");
+            popup.style.display = "inline";
             setTimeout(() => {
-                span.textContent = "monicaklosin@gmail.com";
+                popup.style.display = "none";
             }, 2000);
         }
     </script>
@@ -88,6 +88,31 @@
 </table>
 
 <p style="font-size: 0.85em; margin-bottom: 5px; margin-top: 15px;"><b>Let's chat!</b></p>
+
+<table>
+    <tr>
+        <td><i class="fab fa-discord"></i></td>
+        <td><a href="https://discord.com/users/381626011206549506" title="Discord" class="link">
+                Discord</a></td>
+    </tr>
+    <tr>
+        <td><i class="fa-solid fa-envelope"></i></td>
+        <td>
+            <span class="link" onclick="copyEmail()" style="cursor: pointer;">
+                monicaklosin@gmail.com
+            </span>
+            <span id="copied-popup" style="
+                display: none;
+                background-color: #333;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: 0.75em;
+                margin-left: 8px;
+            ">Copied!</span>
+        </td>
+    </tr>
+</table>
 
 <div style="display: flex; flex-direction: column; gap: 8px; width: fit-content;">
     <button class="tooltip" title="Add me on Discord!"
